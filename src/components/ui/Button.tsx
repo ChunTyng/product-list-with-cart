@@ -7,13 +7,9 @@ type ButtonProps = {
 };
 
 const Button = ({ text, onClick, setCounts }: ButtonProps) => {
-  // button style
-  const buttonStyle = `bg-(--color-Red) text-(--color-Rose50) p-3 w-full rounded-full 
-     xl:w-fullhover:cursor-pointer active:bg-[#952C0C]`;
-
   return text === 'Start New Order' ? (
     <button
-      className={buttonStyle}
+      className="btn-submit"
       onClick={() => {
         if (setCounts) {
           setCounts({});
@@ -23,7 +19,7 @@ const Button = ({ text, onClick, setCounts }: ButtonProps) => {
       {text}
     </button>
   ) : (
-    <button onClick={onClick} className={buttonStyle}>
+    <button onClick={onClick} className="btn-submit">
       {text}
     </button>
   );

@@ -1,12 +1,14 @@
 // feature
-import SelectedItemList from './feature/SelectedItemList';
+import SelectedItemList from './SelectedItemList';
 
 // svg
-import iconOrderConfirmed from '../assets/images/icon-order-confirmed.svg';
+import iconOrderConfirmed from '../../assets/images/icon-order-confirmed.svg';
 
 // type
-import { Item } from '../components/Content';
-import useLockBodyScroll from '../hooks/useLockBodyScroll';
+import { Item } from '../../datatypes/item';
+
+//hook
+import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 
 type ModalProps = {
   isOpen: boolean;
@@ -39,9 +41,12 @@ const Modal = ({
       {/* Modal content */}
       <div
         className={`fixed z-50 p-5 bg-(--color-Rose50) rounded-t-xl shadow-sm
-                    max-h-[90vh] overflow-y-auto transition-transform duration-300
-                    left-0 right-0 bottom-0 
-                    ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
+              max-h-[90vh] overflow-y-auto transition-transform duration-300
+              left-0 right-0 bottom-0
+              ${isOpen ? 'translate-y-0' : 'translate-y-full'}
+              md:top-1/2 md:left-1/2 md:bottom-auto md:right-auto 
+              md:transform md:-translate-x-1/2 md:-translate-y-1/2
+              md:rounded-xl`}
       >
         <div className="flex flex-col gap-3 px-2 py-5">
           <img src={iconOrderConfirmed} alt="" className="w-10" />

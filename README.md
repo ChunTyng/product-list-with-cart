@@ -103,3 +103,4 @@ This challenge is completely free. Please share it with anyone who will find it 
 <!-- does every variables need to add a type (Footer.tsx)-->
 <!-- SelectedItemList shouldn't be exist -->
 <!-- create function or tailwind css as the frist step? -->
+<!-- keydown is not working on increment and decrement -->

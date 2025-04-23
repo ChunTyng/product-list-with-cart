@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Item } from '../components/Content';
+
+// type
+import { Item } from '../datatypes/item';
+import { Status } from '../datatypes/status';
 
 const useFetchData = () => {
   const [data, setData] = useState<Item[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [status, setStatus] = useState<Status>({ loading: true, error: null });
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
@@ -13,16 +15,16 @@ const useFetchData = () => {
         const response = await axios.get('../../data.json');
         setData(response.data);
       } catch (error) {
-        setError('Failed to fetch data');
+        setStatus((prev) => ({ ...prev, loading: false }));
         console.error(error);
       } finally {
-        setLoading(false);
+        setStatus((prev) => ({ ...prev, loading: false }));
       }
     };
 
     fetchData();
   }, []);
-  return { data, loading, error };
+  return { data, status };
 };
 
 export default useFetchData;

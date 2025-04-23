@@ -1,12 +1,13 @@
-import useFetchData from './hooks/useFetchData';
+import { useState } from 'react';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
-import { useState } from 'react';
 
+// hook
+import useFetchData from './hooks/useFetchData';
 function App() {
   // fetchData
-  const { data, loading, error } = useFetchData();
+  const { data, status } = useFetchData();
 
   // useState
   const [counts, setCounts] = useState<{ [key: string]: number }>({});
@@ -22,21 +23,14 @@ function App() {
         <Header />
         <Content
           data={data}
-          loading={loading}
-          error={error}
+          status={status}
           counts={counts}
           setCounts={setCounts}
           hovered={hovered}
           setHovered={setHovered}
         />
       </div>
-      <Footer
-        data={data}
-        counts={counts}
-        setCounts={setCounts}
-        hovered={hovered}
-        setHovered={setHovered}
-      />
+      <Footer data={data} counts={counts} setCounts={setCounts} />
     </div>
   );
 }

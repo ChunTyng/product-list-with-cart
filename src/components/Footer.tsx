@@ -1,19 +1,20 @@
-import { Item } from './Content';
 import { Dispatch, SetStateAction } from 'react';
+
+//feature
 import SelectedItemList from './feature/SelectedItemList';
 
 // svg
 import illustrationEmptyCart from '../assets/images/illustration-empty-cart.svg';
 
+// type
+import { Item } from '../datatypes/item';
+
 type FooterProps = {
   data: Item[];
   counts: { [key: string]: number };
   setCounts: Dispatch<SetStateAction<{ [key: string]: number }>>;
-  hovered: string | null;
-  setHovered: Dispatch<SetStateAction<string | null>>;
 };
 
-// button style
 const Footer = ({ data, counts, setCounts }: FooterProps) => {
   const selected = data.filter((item) => (counts[item.name] || 0) > 0);
   const totalSelectedItems = selected.reduce(
@@ -24,9 +25,6 @@ const Footer = ({ data, counts, setCounts }: FooterProps) => {
     (sum, item) => sum + (counts[item.name] || 0) * item.price,
     0,
   );
-  console.log(selected);
-  console.log(totalSelectedItems);
-  console.log(totalCost);
 
   return (
     <footer

@@ -1,10 +1,13 @@
-import { Item } from '../Content';
+import { useState } from 'react';
+import Button from '../ui/Button';
+import Modal from './Modal';
+
+// svg
 import iconCarbonNeutral from '../../assets/images/icon-carbon-neutral.svg';
 import iconRemoveItem from '../../assets/images/icon-remove-item.svg';
-import Button from '../ui/Button';
-import Modal from '../Modal';
 
-import { useState } from 'react';
+// type
+import { Item } from '../../datatypes/item';
 
 type SelectedItemProps = {
   selected: Item[];
@@ -24,8 +27,7 @@ const SelectedItemList = ({
   const [open, setOpen] = useState(false);
 
   const hoverEffect =
-    'group-hover:[filter:brightness(0)_saturate(100%)_invert(7%)_sepia(11%)' +
-    '_saturate(5924%)_hue-rotate(340deg)_brightness(94%)_contrast(98%)]';
+    'group-hover:[filter:brightness(0)_saturate(100%)_invert(7%)_sepia(11%)_saturate(5924%)_hue-rotate(340deg)_brightness(94%)_contrast(98%)]';
 
   if (variant === 'confirmation') {
     return (

@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
-import { cn } from '../utils/cn';
+import { cn } from '../../utils/cn';
 
 // svg
-import Cart from '../assets/images/icon-add-to-cart.svg';
+import Cart from '../../assets/images/icon-add-to-cart.svg';
 
 type CartButtonDefaultProps = {
   setHovered: Dispatch<SetStateAction<string | null>>;
@@ -15,17 +15,13 @@ const CartButtonDefault = ({
   itemName,
   isHovered,
 }: CartButtonDefaultProps) => {
-  // button base Styles
-  const buttonBaseStyles = `w-[200px] border border-(--color-Rose300) flex justify-center 
-                            gap-2 py-2.5 px-7 font-(--weight-600) rounded-full bg-white 
-                            transition-all duration-200`;
   return (
     <div>
       <button
         onMouseEnter={() => setHovered(itemName)}
         onFocus={() => setHovered(itemName)}
         className={cn(
-          buttonBaseStyles,
+          'btn-base',
           isHovered ? 'opacity-0 pointer-events-none' : 'opacity-100',
         )}
       >

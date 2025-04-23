@@ -1,25 +1,16 @@
 import { Dispatch, SetStateAction } from 'react';
 
 // component
-import CartButtonDefault from './CartButtonDefault';
-import CartButtonHover from './CartButtonHover';
+import CartButtonDefault from './ui/CartButtonDefault';
+import CartButtonHover from './ui/CartButtonHover';
 
 // types
-export type Item = {
-  image: {
-    thumbnail: string;
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
-  name: string;
-  category: string;
-  price: number;
-};
+import { Item } from '../datatypes/item';
+import { Status } from '../datatypes/status';
+
 type ContentProps = {
   data: Item[];
-  loading: boolean;
-  error: string | null;
+  status: Status;
   counts: { [key: string]: number };
   setCounts: Dispatch<SetStateAction<{ [key: string]: number }>>;
   hovered: string | null;
@@ -28,15 +19,14 @@ type ContentProps = {
 
 const Content = ({
   data,
-  loading,
-  error,
+  status,
   counts,
   setCounts,
   hovered,
   setHovered,
 }: ContentProps) => {
-  if (loading) return <div className="text-3xl">Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (status.loading) return <div className="text-3xl">Loading...</div>;
+  if (status.error) return <div>Error: {status.error}</div>;
 
   return (
     <main className="md:grid md:grid-cols-2 md:gap-5 xl:grid-cols-3 xl:gap-4">
@@ -48,7 +38,7 @@ const Content = ({
         return (
           <section key={index} className="flex flex-col gap-3">
             <div
-              className="relative my-7 focus-within:outline-2 outline-(--color-Red) 
+              className="relative my-7 outline-(--color-Red) focus-within:outline-2 
                          rounded-md"
             >
               {/* product images */}

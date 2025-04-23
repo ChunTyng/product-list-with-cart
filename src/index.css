@@ -18,9 +18,55 @@
     font-family: 'Red Hat Text', sans-serif;
     font-size: 16px;
   }
+
+  :focus {
+    outline: none;
+  }
 }
 @layer components {
+  /* Default Button (before hover) */
+  .btn-base {
+    @apply w-[200px] border border-(--color-Rose300) flex justify-center 
+           gap-2 py-2.5 px-7 font-(--weight-600) rounded-full bg-white 
+           transition-all duration-200;
+  }
+
+  /* Hovered Button (appears on hover) */
+  .btn-hover-action {
+    @apply w-[200px] border border-(--color-Rose300) flex items-center 
+           justify-between gap-2 px-4 py-3 bg-(--color-Red) rounded-full 
+           transition-all duration-200 absolute left-0 top-0;
+  }
+  /* Increment / Decrement Button inside hovered area */
+  .btn-add-minus {
+    @apply border border-white rounded-2xl p-1 h-5 hover:cursor-pointer
+         hover:bg-(--color-Rose50);
+  }
+
+  .add-minus-hover-effect {
+    @apply group-hover:[filter:brightness(0)_saturate(100%)_invert(56%)_sepia(100%)_saturate(7492%)_hue-rotate(14deg)_brightness(91%)_contrast(88%)];
+  }
+
+  /* submit button */
+  .btn-submit {
+    @apply bg-(--color-Red) text-(--color-Rose50) p-3 w-full rounded-full 
+             xl:w-full hover:cursor-pointer active:bg-[#952C0C];
+  }
+
+  /* modal mobile */
+  .modal-mobile {
+    @apply fixed z-50 p-5 bg-(--color-Rose50) rounded-t-xl shadow-sm
+           max-h-[90vh] overflow-y-auto transition-transform duration-300
+           left-0 right-0 bottom-0;
+  }
+  /* modal desktop >768px */
+  .modal-desktop {
+    @apply md:top-1/2 md:left-1/2 md:bottom-auto md:right-auto 
+           md:transform md:-translate-x-1/2 md:-translate-y-1/2
+           md:rounded-xl;
+  }
 }
+
 @layer utilities {
 }
 
