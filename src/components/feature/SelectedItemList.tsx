@@ -107,7 +107,7 @@ const SelectedItemList = ({
                 }
               >
                 <img
-                  src="/images/icon-remove-item.svg"
+                  src="/product-list-with-cart/images/icon-remove-item.svg"
                   alt="icon-remove-item"
                   className={hoverEffect}
                 />
@@ -128,7 +128,7 @@ const SelectedItemList = ({
             xl:w-full"
         >
           <img
-            src="/images/icon-carbon-neutral.svg"
+            src="/product-list-with-cart/images/icon-carbon-neutral.svg"
             alt=""
             className="w-5 h-5 sm:w-6 sm:h-6"
           />

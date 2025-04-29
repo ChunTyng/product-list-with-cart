@@ -25,7 +25,10 @@ const CartButtonDefault = ({
           isHovered ? 'opacity-0 pointer-events-none' : 'opacity-100',
         )}
       >
-        <img src="/images/icon-add-to-cart.svg" alt="cart" />
+        <img
+          src="/product-list-with-cart/images/icon-add-to-cart.svg"
+          alt="cart"
+        />
         Add to Cart
       </button>
     </div>

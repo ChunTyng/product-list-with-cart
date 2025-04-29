@@ -42,7 +42,7 @@ const Footer = ({ data, counts, setCounts }: FooterProps) => {
       {totalSelectedItems === 0 ? (
         <div className="flex flex-col justify-center items-center gap-5 2xl:w-full">
           <img
-            src="/images/illustration-empty-cart.svg"
+            src="/product-list-with-cart/images/illustration-empty-cart.svg"
             alt="illustration-empty-cart"
             className="2xl:w-[400px]"
           />

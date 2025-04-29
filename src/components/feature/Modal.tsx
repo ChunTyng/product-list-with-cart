@@ -46,7 +46,11 @@ const Modal = ({
               md:rounded-xl md:w-auto`}
       >
         <div className="flex flex-col gap-3 px-2 py-5">
-          <img src="/images/icon-order-confirmed.svg" alt="" className="w-10" />
+          <img
+            src="//product-list-with-cart/images/icon-order-confirmed.svg"
+            alt=""
+            className="w-10"
+          />
           <h1 className="text-4xl font-(--weight-700)">Order Confirmed</h1>
           <p className="text-(--color-Rose400) font-(--weight-400)">
             We hope you enjoy your food!

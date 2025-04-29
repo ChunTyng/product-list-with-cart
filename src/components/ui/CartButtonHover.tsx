@@ -81,7 +81,7 @@ const CartButtonHover = ({
         disabled={itemCount === 0}
       >
         <img
-          src="/images/icon-decrement-quantity.svg"
+          src="/product-list-with-cart/images/icon-decrement-quantity.svg"
           alt="icon-Decrement"
           className="add-minus-hover-effect"
         />
@@ -100,7 +100,7 @@ const CartButtonHover = ({
         className="btn-add-minus group"
       >
         <img
-          src="/images/icon-increment-quantity.svg"
+          src="/product-list-with-cart/images/icon-increment-quantity.svg"
           alt="icon-Increment"
           className="add-minus-hover-effect"
         />
