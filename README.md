@@ -102,3 +102,4 @@ This challenge is completely free. Please share it with anyone who will find it 
 <!-- The addition and subtraction buttons don't have a red-colored image -->
 <!-- Do all variables need to have a type in Footer.tsx? -->
 <!-- The SelectedItemList component shouldn't exist -->
+<!-- Text weights are different between safari and chrome -->

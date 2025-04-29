@@ -12,7 +12,9 @@ const useFetchData = () => {
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
-        const response = await axios.get('../../data.json');
+        const response = await axios.get(
+          'https://raw.githubusercontent.com/ChunTyng/product-list-with-cart/refs/heads/main/data.json',
+        );
         setData(response.data);
       } catch (error) {
         setStatus((prev) => ({ ...prev, loading: false }));
