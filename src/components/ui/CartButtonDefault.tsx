@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { cn } from '../../utils/cn';
 
 // svg
-import Cart from '../../assets/images/icon-add-to-cart.svg';
+// import Cart from '/images/icon-add-to-cart.svg';
 
 type CartButtonDefaultProps = {
   setHovered: Dispatch<SetStateAction<string | null>>;
@@ -25,7 +25,7 @@ const CartButtonDefault = ({
           isHovered ? 'opacity-0 pointer-events-none' : 'opacity-100',
         )}
       >
-        <img src={Cart} alt="cart" />
+        <img src="/images/icon-add-to-cart.svg" alt="cart" />
         Add to Cart
       </button>
     </div>

@@ -5,7 +5,7 @@ import SelectedItemList from './feature/SelectedItemList';
 import Modal from './feature/Modal';
 
 // svg
-import illustrationEmptyCart from '../assets/images/illustration-empty-cart.svg';
+// import illustrationEmptyCart from '/images/illustration-empty-cart.svg';
 
 // type
 import { Item } from '../datatypes/item';
@@ -42,7 +42,7 @@ const Footer = ({ data, counts, setCounts }: FooterProps) => {
       {totalSelectedItems === 0 ? (
         <div className="flex flex-col justify-center items-center gap-5 2xl:w-full">
           <img
-            src={illustrationEmptyCart}
+            src="/images/illustration-empty-cart.svg"
             alt="illustration-empty-cart"
             className="2xl:w-[400px]"
           />

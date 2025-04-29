@@ -3,8 +3,8 @@ import { Dispatch, SetStateAction } from 'react';
 import { cn } from '../../utils/cn';
 
 // svg
-import iconIncrement from '../../assets/images/icon-increment-quantity.svg';
-import iconDecrement from '../../assets/images/icon-decrement-quantity.svg';
+// import iconIncrement from '/images/icon-increment-quantity.svg';
+// import iconDecrement from '/images/icon-decrement-quantity.svg';
 
 // hook
 import { useBlurOnMouseLeave } from '../../hooks/useBlurOnMouseLeave';
@@ -81,7 +81,7 @@ const CartButtonHover = ({
         disabled={itemCount === 0}
       >
         <img
-          src={iconDecrement}
+          src="/images/icon-decrement-quantity.svg"
           alt="icon-Decrement"
           className="add-minus-hover-effect"
         />
@@ -100,7 +100,7 @@ const CartButtonHover = ({
         className="btn-add-minus group"
       >
         <img
-          src={iconIncrement}
+          src="/images/icon-increment-quantity.svg"
           alt="icon-Increment"
           className="add-minus-hover-effect"
         />

@@ -1,8 +1,8 @@
 import Button from '../ui/Button';
 
 // svg
-import iconCarbonNeutral from '../../assets/images/icon-carbon-neutral.svg';
-import iconRemoveItem from '../../assets/images/icon-remove-item.svg';
+// import iconCarbonNeutral from '/images/icon-carbon-neutral.svg';
+// import iconRemoveItem from '/images/icon-remove-item.svg';
 
 // type
 import { Item } from '../../datatypes/item';
@@ -107,7 +107,7 @@ const SelectedItemList = ({
                 }
               >
                 <img
-                  src={iconRemoveItem}
+                  src="/images/icon-remove-item.svg"
                   alt="icon-remove-item"
                   className={hoverEffect}
                 />
@@ -128,7 +128,7 @@ const SelectedItemList = ({
             xl:w-full"
         >
           <img
-            src={iconCarbonNeutral}
+            src="/images/icon-carbon-neutral.svg"
             alt=""
             className="w-5 h-5 sm:w-6 sm:h-6"
           />

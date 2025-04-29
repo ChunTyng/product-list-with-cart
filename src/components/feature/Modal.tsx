@@ -1,8 +1,9 @@
 // feature/Modal.tsx
 import SelectedItemList from './SelectedItemList';
-import iconOrderConfirmed from '../../assets/images/icon-order-confirmed.svg';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 import { Item } from '../../datatypes/item';
+
+// import iconOrderConfirmed from '/images/icon-order-confirmed.svg';
 
 type ModalProps = {
   isOpen: boolean;
@@ -45,7 +46,7 @@ const Modal = ({
               md:rounded-xl md:w-auto`}
       >
         <div className="flex flex-col gap-3 px-2 py-5">
-          <img src={iconOrderConfirmed} alt="" className="w-10" />
+          <img src="/images/icon-order-confirmed.svg" alt="" className="w-10" />
           <h1 className="text-4xl font-(--weight-700)">Order Confirmed</h1>
           <p className="text-(--color-Rose400) font-(--weight-400)">
             We hope you enjoy your food!
