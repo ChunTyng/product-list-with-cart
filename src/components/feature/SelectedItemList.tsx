@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import Button from '../ui/Button';
-import Modal from './Modal';
 
 // svg
 import iconCarbonNeutral from '../../assets/images/icon-carbon-neutral.svg';
@@ -14,6 +12,8 @@ type SelectedItemProps = {
   counts: { [key: string]: number };
   totalCost: number;
   setCounts: React.Dispatch<React.SetStateAction<{ [key: string]: number }>>;
+  onConfirm?: () => void;
+  onClose?: () => void;
   variant?: 'summary' | 'confirmation';
 };
 
@@ -22,10 +22,10 @@ const SelectedItemList = ({
   counts,
   totalCost,
   setCounts,
+  onConfirm,
+  onClose,
   variant,
 }: SelectedItemProps) => {
-  const [open, setOpen] = useState(false);
-
   const hoverEffect =
     'group-hover:[filter:brightness(0)_saturate(100%)_invert(7%)_sepia(11%)_saturate(5924%)_hue-rotate(340deg)_brightness(94%)_contrast(98%)]';
 
@@ -35,17 +35,17 @@ const SelectedItemList = ({
         className="flex flex-col justify-center items-center w-full 
                     xl:w-full"
       >
-        <div className="w-full flex flex-col p-5 bg-(--color-Rose100) rounded-md m-5">
+        <div className="w-full flex flex-col justify-center items-center p-5 bg-(--color-Rose100) rounded-md m-1">
           {selected.map((item) => (
             <div className="w-full flex flex-col" key={item.name}>
-              <div className="flex flex-row items-center justify-between">
+              <div className="flex flex-row items-center justify-between gap-2">
                 <img
                   src={item.image.thumbnail}
                   alt="product thumbnail"
                   className="w-13 rounded-sm"
                 />
-                <div className="flex flex-col text-left font-(--weight-600) text-sm">
-                  <h4 className="truncate max-w-[20ch] w-[16ch] my-1">
+                <div className="flex flex-col text-left font-(--weight-600) text-sm w-auto min-w-0">
+                  <h4 className="truncate max-w-[19ch] w-[16ch] my-1">
                     {item.name}
                   </h4>
                   <div className="flex flex-row text-(--color-Rose400) items-center">
@@ -74,7 +74,7 @@ const SelectedItemList = ({
         <Button
           text="Start New Order"
           setCounts={setCounts}
-          onClick={() => {}}
+          onClick={onClose}
         />
       </section>
     );
@@ -88,6 +88,7 @@ const SelectedItemList = ({
                 <h4>{item.name}</h4>
                 <div className="flex flex-row gap-2 text-(--color-Rose300) items-center">
                   <p className="text-(--color-Red) mr-2">
+                    ``
                     {counts[item.name]}x
                   </p>
                   <p className="font-(--weight-400) mx-2">
@@ -99,7 +100,7 @@ const SelectedItemList = ({
                 </div>
               </div>
               <button
-                className="rounded-2xl border border-(--color-Rose400) p-[2px] hover:border-(--color-Rose900)
+                className="rounded-2xl border border-(--color-Rose400) p-0.5 hover:border-(--color-Rose900)
                         hover:cursor-pointer group"
                 onClick={() =>
                   setCounts((prev) => ({ ...prev, [item.name]: 0 }))
@@ -139,16 +140,7 @@ const SelectedItemList = ({
             delivery
           </span>
         </p>
-        <Button text="Confirm Order" onClick={() => setOpen(true)} />
-
-        <Modal
-          isOpen={open}
-          onClose={() => setOpen(false)}
-          selected={selected}
-          counts={counts}
-          totalCost={totalCost}
-          setCounts={setCounts}
-        ></Modal>
+        <Button text="Confirm Order" onClick={onConfirm} />
       </section>
     );
   }

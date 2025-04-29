@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
-
+import { useState } from 'react';
 //feature
 import SelectedItemList from './feature/SelectedItemList';
+import Modal from './feature/Modal';
 
 // svg
 import illustrationEmptyCart from '../assets/images/illustration-empty-cart.svg';
@@ -25,6 +26,8 @@ const Footer = ({ data, counts, setCounts }: FooterProps) => {
     (sum, item) => sum + (counts[item.name] || 0) * item.price,
     0,
   );
+
+  const [open, setOpen] = useState(false);
 
   return (
     <footer
@@ -55,8 +58,18 @@ const Footer = ({ data, counts, setCounts }: FooterProps) => {
           setCounts={setCounts}
           totalCost={totalCost}
           variant="summary"
+          onConfirm={() => setOpen(true)}
         />
       )}
+
+      <Modal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        selected={selected}
+        counts={counts}
+        totalCost={totalCost}
+        setCounts={setCounts}
+      />
     </footer>
   );
 };

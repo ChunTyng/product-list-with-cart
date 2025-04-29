@@ -99,8 +99,6 @@ This challenge is completely free. Please share it with anyone who will find it 
 
 **Have fun building!** 🚀
 
-<!-- addition and minus button doesn't have red color img -->
-<!-- does every variables need to add a type (Footer.tsx)-->
-<!-- SelectedItemList shouldn't be exist -->
-<!-- create function or tailwind css as the frist step? -->
-<!-- keydown is not working on increment and decrement -->
+<!-- The addition and subtraction buttons don't have a red-colored image -->
+<!-- Do all variables need to have a type in Footer.tsx? -->
+<!-- The SelectedItemList component shouldn't exist -->

@@ -7,19 +7,17 @@ type ButtonProps = {
 };
 
 const Button = ({ text, onClick, setCounts }: ButtonProps) => {
-  return text === 'Start New Order' ? (
-    <button
-      className="btn-submit"
-      onClick={() => {
-        if (setCounts) {
-          setCounts({});
-        }
-      }}
-    >
-      {text}
-    </button>
-  ) : (
-    <button onClick={onClick} className="btn-submit">
+  const handleClick = () => {
+    if (setCounts) {
+      setCounts({});
+    }
+    if (onClick) {
+      onClick();
+    }
+  };
+
+  return (
+    <button onClick={handleClick} className="btn-submit">
       {text}
     </button>
   );
