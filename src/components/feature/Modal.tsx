@@ -47,7 +47,7 @@ const Modal = ({
       >
         <div className="flex flex-col gap-3 px-2 py-5">
           <img
-            src="//product-list-with-cart/images/icon-order-confirmed.svg"
+            src="/product-list-with-cart/images/icon-order-confirmed.svg"
             alt=""
             className="w-10"
           />
