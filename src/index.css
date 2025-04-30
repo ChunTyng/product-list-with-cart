@@ -17,12 +17,15 @@
   html {
     font-family: 'Red Hat Text', sans-serif;
     font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   :focus {
     outline: none;
   }
 }
+
 @layer components {
   /* Default Button (before hover) */
   .btn-base {
